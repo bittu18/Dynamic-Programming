@@ -1,0 +1,15 @@
+def l_pal(X,m,n):
+    if m>n:
+        return 0
+    elif m==n:
+        return 1
+    
+    elif X[m]==X[n]:
+        return l_pal(X,m+1,n-1)+2
+    else:
+        return max(l_pal(X,m+1,n),l_pal(X,m,n-1))
+
+X ='ABBDCACB'
+a=len(X)
+print(l_pal(X,0,a-1))
+            
